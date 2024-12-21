@@ -6,7 +6,7 @@
 #    By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 05:17:42 by ahraich           #+#    #+#              #
-#    Updated: 2024/12/21 16:01:51 by ahraich          ###   ########.fr        #
+#    Updated: 2024/12/21 16:38:18 by ahraich          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJ = $(SRC:.cpp=.o)
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Fixed01
+NAME = FragTrap
 
 CPP = c++
 

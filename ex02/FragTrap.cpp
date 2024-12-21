@@ -6,7 +6,7 @@
 /*   By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 05:26:22 by ahraich           #+#    #+#             */
-/*   Updated: 2024/12/21 16:04:31 by ahraich          ###   ########.fr       */
+/*   Updated: 2024/12/21 16:37:37 by ahraich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void FragTrap::highFivesGuys()
         return ;
     }
     this->Energy_points--;
-    std::cout<< "FragTrap "<< name << " is now in Gate keeper mode." << std::endl;
+    std::cout<< "FragTrap "<< name << " is requesting a High Five" << std::endl;
 }
 
 void FragTrap::attack(const std::string &target)
