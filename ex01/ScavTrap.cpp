@@ -6,7 +6,7 @@
 /*   By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 05:26:22 by ahraich           #+#    #+#             */
-/*   Updated: 2024/12/21 09:08:36 by ahraich          ###   ########.fr       */
+/*   Updated: 2024/12/21 09:28:34 by ahraich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void ScavTrap::guardGate()
         return ;
     }
     this->Energy_points--;
-    std::cout<< "ScavTrap is now in Gate keeper mode." << std::endl;
+    std::cout<< "ScavTrap "<< name << " is now in Gate keeper mode." << std::endl;
 }
 
 void ScavTrap::attack(const std::string &target)

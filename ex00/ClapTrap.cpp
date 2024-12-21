@@ -6,7 +6,7 @@
 /*   By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 23:51:47 by ahraich           #+#    #+#             */
-/*   Updated: 2024/12/21 05:23:23 by ahraich          ###   ########.fr       */
+/*   Updated: 2024/12/21 09:39:01 by ahraich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,26 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::displayStats()
 {
     std::cout << "--------" << std::endl;
-    std::cout << "name          : " << this->name << std::endl;
-    std::cout << "Hit Points    : " << this->Hit_points << std::endl;
-    std::cout << "Energy_points : " << this->Energy_points << std::endl;
-    std::cout << "Attack_damage : " << this->Attack_damage << std::endl;
+    std::cout << "ScavTrap " << name 
+              << " status - HP: " << Hit_points 
+              << ", EP: " << Energy_points 
+              << ", AD: " << Attack_damage << std::endl;
     std::cout << "--------" << std::endl;
 }
 
-ClapTrap:: ClapTrap(std::string _name):name(_name), Hit_points(10), Energy_points(10), Attack_damage(0){std::cout << "ClapTrap " << name << " constructed.\n";}
+ClapTrap::ClapTrap(std::string _name):name(_name), Hit_points(10), Energy_points(10), Attack_damage(0){std::cout << "ClapTrap " << name << " constructed.\n";}
 
-ClapTrap::~ ClapTrap() {std::cout << "ClapTrap " << this->name << " destroyed.\n";} // default destructor
+
+ClapTrap::ClapTrap()
+    :name("Uknown"), Hit_points(10), Energy_points(10), Attack_damage(0)
+{
+    std::cout << "ClapTrap " << name << " is constructed Without a name\n";
+}
+
+ClapTrap::~ClapTrap() {std::cout << "ClapTrap " << this->name << " destroyed.\n";} // default destructor
 
 ClapTrap::ClapTrap(const ClapTrap &other) // copy constructor
-    : name(other.name),Hit_points(other.Hit_points), Energy_points(other.Energy_points), Attack_damage(other.Attack_damage){}
+    : name(other.name),Hit_points(other.Hit_points), Energy_points(other.Energy_points), Attack_damage(other.Attack_damage){std::cout << "ClapTrap " << name << " Copy constructed.\n";}
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) // copy assignment operator overload
 {
