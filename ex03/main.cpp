@@ -6,77 +6,46 @@
 /*   By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 03:04:40 by ahraich           #+#    #+#             */
-/*   Updated: 2024/12/21 16:13:21 by ahraich          ###   ########.fr       */
+/*   Updated: 2024/12/21 21:32:43 by ahraich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "FragTrap.h"
+#include "DiamondTrap.h"
 
-int main ()
+int main()
 {
-    std::cout << "\n=== Testing FragTrap Construction/Destruction ===" << std::endl;
-    {
-        std::cout << "\nCreating FragTrap 'Guardian'" << std::endl;
-        FragTrap guardian("Guardian");
-        // Destructor will be called automatically at end of scope
-    }
+    // Test 1: Default Constructor
+    DiamondTrap defaultTrap;
+    defaultTrap.whoAmI();
+    defaultTrap.attack("Zombie");
 
-    std::cout << "\n=== Testing Basic FragTrap Functionality ===" << std::endl;
-    FragTrap robot1;
-    FragTrap robot2("Robot2");
+    std::cout << "\n--------------------\n";
 
-    // Test initial stats
-    std::cout << "\n>> Testing initial stats (should be HP:100, EP:50, AD:20)" << std::endl;
-    robot1.printStats();  // You'll need to add this member function
+    // Test 2: Parameterized Constructor
+    DiamondTrap namedTrap("Diamond");
+    namedTrap.whoAmI();
+    namedTrap.attack("Skeleton");
 
-    // Test attack
-    std::cout << "\n>> Testing attack functionality" << std::endl;
-    robot1.attack("Target Dummy");
-    robot2.takeDamage(20);  // Take damage from Robot1's attack
+    std::cout << "\n--------------------\n";
 
-    // Test taking damage
-    std::cout << "\n>> Testing damage taking" << std::endl;
-    robot1.takeDamage(30);
-    robot1.printStats();  // Should show reduced HP
+    // Test 3: Copy Constructor
+    DiamondTrap copyTrap(namedTrap);
+    copyTrap.printStats();
+    std::cout << "\n--------------------\n";
+    copyTrap.whoAmI();
+    std::cout << "\n--------------------\n";
+    copyTrap.attack("Ghoul");
+    std::cout << "\n--------------------\n";
+    copyTrap.beRepaired(120);
+    std::cout << "\n--------------------\n";
+    copyTrap.guardGate();
+    std::cout << "\n--------------------\n";
+    copyTrap.highFivesGuys();
+    std::cout << "\n--------------------\n";
+    copyTrap.printStats();
 
-    // Test repair
-    std::cout << "\n>> Testing repair functionality" << std::endl;
-    robot1.beRepaired(15);
-    robot1.printStats();  // Should show increased HP
-
-    // Test Guard Gate special ability
-    std::cout << "\n>> Testing Guard Gate mode" << std::endl;
-    robot1.highFivesGuys();
-
-    // Test energy points depletion
-    std::cout << "\n>> Testing energy points depletion" << std::endl;
-    for (int i = 0; i < 50; ++i) {  // More than available energy points
-        std::cout << "Attack #" << i + 1 << ": ";
-        robot1.attack("Target");
-    }
-
-    // Test zero HP behavior
-    std::cout << "\n>> Testing zero HP behavior" << std::endl;
-    FragTrap robot3("Robot3");
-    robot3.takeDamage(100);  // Brings HP to 0
-    robot3.attack("Target");  // Should fail
-    robot3.beRepaired(10);   // Should fail
-    robot3.highFivesGuys();      // Should fail
-
-    // Test copy constructor and assignment operator
-    std::cout << "\n=== Testing Copy Operations ===" << std::endl;
-    FragTrap original("Original");
-    original.takeDamage(30);  // Reduce HP to test if state is copied
-
-    std::cout << "\n>> Testing copy constructor" << std::endl;
-    FragTrap copied(original);
-    copied.printStats();  // Should show same reduced HP as original
-
-    std::cout << "\n>> Testing assignment operator" << std::endl;
-    FragTrap assigned("Assigned");
-    assigned = original;
-    assigned.printStats();  // Should show same reduced HP as original
-
+    // Test 5: Destructor (automatic when objects go out of scope)
+    // No explicit test required—observe destructor messages
     return 0;
 }
