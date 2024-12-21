@@ -6,9 +6,12 @@
 /*   By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 05:26:26 by ahraich           #+#    #+#             */
-/*   Updated: 2024/12/21 16:02:05 by ahraich          ###   ########.fr       */
+/*   Updated: 2024/12/21 20:00:55 by ahraich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FRAGTRAP_H
+#define FRAGTRAP_H
 
 #include "ClapTrap.h"
 
@@ -23,7 +26,7 @@ class FragTrap : public ClapTrap
         FragTrap& operator=(const FragTrap& other); // copy assignment operator
 
         //special function 
-        void attack(const std::string& target);
         void highFivesGuys();
 };
 
+#endif

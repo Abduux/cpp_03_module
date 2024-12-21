@@ -6,9 +6,12 @@
 /*   By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 05:26:26 by ahraich           #+#    #+#             */
-/*   Updated: 2024/12/21 09:02:24 by ahraich          ###   ########.fr       */
+/*   Updated: 2024/12/21 20:00:39 by ahraich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
 
 #include "ClapTrap.h"
 
@@ -28,3 +31,4 @@ class ScavTrap : public ClapTrap
         void guardGate();
 };
 
+#endif

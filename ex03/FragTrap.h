@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.h                                         :+:      :+:    :+:   */
+/*   FragTrap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 05:26:26 by ahraich           #+#    #+#             */
-/*   Updated: 2024/12/21 19:59:59 by ahraich          ###   ########.fr       */
+/*   Updated: 2024/12/21 19:56:40 by ahraich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
 
 #include "ClapTrap.h"
 
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
     public:
-        ScavTrap();
-        ScavTrap(std::string name); // default constructor
-        ~ScavTrap(); // default destructor 
-        ScavTrap(const ScavTrap& other); // copy constructor
-        ScavTrap& operator=(const ScavTrap& other); // copy assignment operator
+        FragTrap();
+        FragTrap(std::string name); // default constructor
+        ~FragTrap(); // default destructor 
+        FragTrap(const FragTrap& other); // copy constructor
+        FragTrap& operator=(const FragTrap& other); // copy assignment operator
 
-
-        //member function 
-        void attack(const std::string& target);
-        void guardGate();
+        //special function 
+        void highFivesGuys();
 };
 
-#endif
