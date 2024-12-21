@@ -6,36 +6,43 @@
 /*   By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 03:04:40 by ahraich           #+#    #+#             */
-/*   Updated: 2024/12/21 05:20:24 by ahraich          ###   ########.fr       */
+/*   Updated: 2024/12/21 09:13:25 by ahraich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
+
+#include "ScavTrap.h"
 
 int main ()
 {
-    ClapTrap clap("Clappy");
-
-    clap.attack("target1"); // // ENERGY -1
+    ScavTrap a("A"); // get created with 
+    ScavTrap b("B");
     
-    clap.takeDamage(3); //HP -3
-    clap.takeDamage(3); //HP -3
-    clap.beRepaired(5); //HP +5 // ENERGY -1
-    clap.beRepaired(5); //HP +5 // ENERGY -1
-    clap.beRepaired(1); //HP +1 // ENERGY -1
-    clap.takeDamage(3); //HP -3
-
-    clap.displayStats();
-    //EXPECTED :
-    //HP        : 10 -3 -3 +5 +5 +1 -3 = 12
-    //ENERGY    : 6
+    a.displayStats();
+    b.displayStats();
     
-    for(int i = 0 ; i < 10 ; i++)
-        clap.attack("TARGET"); // ENERGY (-1 x 10) STOPS AT 0
-        //WILL ONLY ATTACK 6 TIMES (ENERGY POINTS)
-        
 
-    clap.beRepaired(5); // SHOULD NOT REPAIR
-    clap.displayStats(); // EXPECTED HP 12 , ENERGY 0
-    return 0;
+
+    a.attack("Target1");
+    b.attack("Target2");
+    
+    a.beRepaired(10);
+    b.beRepaired(22);
+
+    a.takeDamage(20);
+    b.takeDamage(40);
+    
+    a.guardGate();
+    b.guardGate();
+
+    // a.takeDamage(100);
+    // b.takeDamage(100);
+    
+
+    a.guardGate();
+    b.guardGate();
+    // show stats
+    
+    a.displayStats();
+    b.displayStats();
 }

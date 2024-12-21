@@ -6,7 +6,7 @@
 /*   By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 23:52:03 by ahraich           #+#    #+#             */
-/*   Updated: 2024/12/21 05:21:57 by ahraich          ###   ########.fr       */
+/*   Updated: 2024/12/21 09:02:49 by ahraich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class  ClapTrap
 {
-    private:
+    protected:
 
         std::string     name;
         unsigned int    Hit_points;
@@ -26,6 +26,7 @@ class  ClapTrap
 
     public:
         //constructors & destructors. 
+        ClapTrap();
         ClapTrap(std::string name);
         ~ ClapTrap();
         ClapTrap(const ClapTrap& other);

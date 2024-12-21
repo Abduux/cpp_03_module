@@ -6,12 +6,12 @@
 #    By: ahraich <ahraich@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 05:17:42 by ahraich           #+#    #+#              #
-#    Updated: 2024/12/21 05:18:58 by ahraich          ###   ########.fr        #
+#    Updated: 2024/12/21 05:29:31 by ahraich          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC  = main.cpp ClapTrap.cpp
+SRC  = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -26,7 +26,7 @@ REMOVE = rm -rf
 
 all : ${NAME}
 
-${NAME}: ${OBJ} ClapTrap.h
+${NAME}: ${OBJ} ScavTrap.h
 	${CPP} ${OBJ} ${CPPFLAGS} -o ${NAME}
 
 clean:
